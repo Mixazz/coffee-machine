@@ -1,2 +1,2 @@
 # coffee-machine
-Coffee machine
+JavaScript Coffee machine
