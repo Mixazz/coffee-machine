@@ -1,1 +1,25 @@
+.coffee-list {
+    background-image: url("../img/background.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-size: 20px;
+}
 
+.coffee-operation {
+    background-color: #CACFD2;
+}
+
+.coffee-item {
+    background-color: rgba(44, 62, 80, 0.5);
+    margin: 15px;
+    border-radius: 100px;
+}
+.coffee-item:hover {
+    background-color: rgba(251, 252, 252, 0.5);
+}
+
+.coffee-item img {
+    width: 100px;
+    padding: 15px;
+}
