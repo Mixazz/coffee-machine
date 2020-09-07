@@ -1,25 +1,31 @@
 .coffee-list {
-    background-image: url("../img/background.jpg");
-    -webkit-background-size: cover;
-    background-size: cover;
-    color: white;
-    font-size: 20px;
+  background-image: url("../img/background.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: white;
+  font-size: 20px;
+  border: 3px solid black;
 }
 
 .coffee-operation {
-    background-color: #CACFD2;
+  background-color: #cacfd2;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
 }
 
 .coffee-item {
-    background-color: rgba(44, 62, 80, 0.5);
-    margin: 15px;
-    border-radius: 100px;
+  background-color: rgba(0, 2, 3, 0.8);
+  margin: 20px;
+  border-radius: 100px;
+  border: 2px solid white;
 }
 .coffee-item:hover {
-    background-color: rgba(251, 252, 252, 0.5);
+  background-color: rgba(251, 252, 252, 0.8);
+  color: black;
 }
 
 .coffee-item img {
-    width: 100px;
-    padding: 15px;
+  width: 100px;
+  padding: 15px;
 }
