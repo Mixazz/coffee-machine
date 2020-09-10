@@ -11,19 +11,19 @@
       <div class="container">
          <div class="row">
             <div class="col-12 col-sm-5 coffee-list">
-               <div class="coffee-item" onclick="makeCofee('Эспрессо', 45)">
+               <div class="coffee-item" onclick="makeCofee('Эспрессо', 45, 'img/espresso.png')">
                   <img src="img/espresso.png" alt="Эспрессо">
                   <span>Эспрессо - 45 руб. </span>
                </div>
-               <div class="coffee-item" onclick="makeCofee('Американо', 56)">
+               <div class="coffee-item" onclick="makeCofee('Американо', 56, 'img/americano.png')">
                   <img src="img/americano.png" alt="Американо">
                   <span>Американо - 56 руб. </span>
                </div>
-               <div class="coffee-item" onclick="makeCofee('Капучино', 91)">
+               <div class="coffee-item" onclick="makeCofee('Капучино', 91, 'img/cappuccino.png')">
                   <img src="img/cappuccino.png" alt="Капучино">
                   <span>Капучино - 91 руб. </span>
                </div>
-               <div class="coffee-item" onclick="makeCofee('Латтэ', 113)">
+               <div class="coffee-item" onclick="makeCofee('Латтэ', 113, 'img/latte.png')">
                   <img src="img/latte.png" alt="Латте">
                   <span>Латте - 113 руб. </span>
                </div>
@@ -38,7 +38,7 @@
                         </div>
                      </div>
                      <div class="cup-container">
-                        <img class="cup" src="img/americano.png" alt="">
+                        <img class="cup" src="img/americano.png" alt="" hidden onclick="imgHidden()"> 
                      </div>
                   </div>
                   <div class="col-12 col-sm-6">
@@ -46,7 +46,7 @@
                         <div class="input-group-prepend">
                            <span class="input-group-text">₽</span>
                         </div>
-                        <input type="text" class="form-control"  placeholder="Баланс">
+                        <input type="text" class="form-control"  placeholder="Баланс" readonly>
                      </div>
                      <div class="atm-container">
                          <img src="img/bill_acc.png" alt="">
@@ -62,7 +62,6 @@
          </div>
       </div>
       <script src="js/script.js"></script>
-      <script src="../8/js/script.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
