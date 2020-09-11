@@ -11,19 +11,19 @@
       <div class="container">
          <div class="row">
             <div class="col-12 col-sm-5 coffee-list">
-               <div class="coffee-item" onclick="makeCofee('Эспрессо', 45)">
+               <div class="coffee-item" onclick="makeCofee('Эспрессо', 45, this)">
                   <img src="img/espresso.png" alt="Эспрессо">
                   <span>Эспрессо - 45 руб. </span>
                </div>
-               <div class="coffee-item" onclick="makeCofee('Американо', 56)">
+               <div class="coffee-item" onclick="makeCofee('Американо', 56, this)">
                   <img src="img/americano.png" alt="Американо">
                   <span>Американо - 56 руб. </span>
                </div>
-               <div class="coffee-item" onclick="makeCofee('Капучино', 91)">
+               <div class="coffee-item" onclick="makeCofee('Капучино', 91, this)">
                   <img src="img/cappuccino.png" alt="Капучино">
                   <span>Капучино - 91 руб. </span>
                </div>
-               <div class="coffee-item" onclick="makeCofee('Латтэ', 113)">
+               <div class="coffee-item" onclick="makeCofee('Латтэ', 113, this)">
                   <img src="img/latte.png" alt="Латте">
                   <span>Латте - 113 руб. </span>
                </div>
@@ -34,7 +34,7 @@
                      <div class="display">
                         <p class="display-text">Выберите кофе</p>
                         <div class="progress">
-                           <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                           <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="transition: none;"></div>
                         </div>
                      </div>
                      <div class="cup-container">
