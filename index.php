@@ -49,17 +49,19 @@
                         <input type="text" class="form-control"  placeholder="Баланс">
                      </div>
                      <div class="atm-container">
-                         <img src="img/bill_acc.png" alt="">
+                         <img class="atm" src="img/bill_acc.png" alt="">
                          <button type="button" class="btn btn-success btn-block">Сдача</button>
                          <div class="change"></div>
                      </div>
-                     
-                     
-                     
                   </div>
                </div>
             </div>
          </div>
+      </div>
+      <div class="money container">
+          <img src="img/50rub.jpg" alt="50rub" data-cost='50'>
+          <img src="img/100rub.jpg" alt="100rub" data-cost='100'>
+          <img src="img/500rub.jpg" alt="500rub" data-cost='500'>
       </div>
       <script src="js/script.js"></script>
       <script src="../8/js/script.js"></script>

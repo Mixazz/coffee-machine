@@ -58,7 +58,6 @@ function makeCofee(name, price, element) {
             bigCup.style.opacity = `${readyPercent}%`;
             changeDisplayText(`Ваш ${name} готовится. ${readyPercent}%`);
             
-            
             if (readyPercent >=100){
                clearInterval(coookingInterval)
                changeDisplayText(`Ваш ${name} готов!`)
@@ -79,3 +78,78 @@ function makeCofee(name, price, element) {
         balance.style.backgroundColor = '#F1948A';
     }
 }
+
+//-------------Dhfg'n Drop-------------
+let money = document.querySelectorAll('.money img')
+for (let bill of money) {
+    bill.onmousedown = function(event) {
+       takeModey(event, bill)
+    }
+}
+
+function takeModey(event, bill) {
+    event.preventDefault();
+    let mouseX = event.clientX;
+    let mouseY = event.clientY;
+    bill.style.transform = 'rotate(90deg)';
+    
+    // определение высоты и ширины
+    let billCoords = bill.getBoundingClientRect();
+
+    //позиция элемента отосительно мыши по центру
+    bill.style.position = 'absolute';
+    bill.style.top = mouseY - billCoords.width/2 + 'px';
+    bill.style.left = mouseX - billCoords.height/2 + 'px';
+
+    window.onmousemove = function(event) {
+        let mouseX = event.clientX;
+        let mouseY = event.clientY;
+        bill.style.top = mouseY - billCoords.width/2 + 'px';
+        bill.style.left = mouseX - billCoords.height/2 + 'px';
+        
+    }
+   bill.onmouseup  = function(event) {
+       window.onmousemove = null;
+      if (inAtm(bill)) {
+          let balance = document.querySelector('.form-control');
+          balance.value = + balance.value + +bill.dataset.cost;
+          bill.remove();
+      }
+   }
+}
+
+function inAtm(bill) {
+    let atm = document.querySelector('.atm');
+    let atmCoords = atm.getBoundingClientRect();
+    let billCoords = bill.getBoundingClientRect();
+    
+    let atmLeftTopX = atmCoords.x;
+    let atmLeftTopY = atmCoords.y;
+    
+    // let atmLeftBottomX = atmCoords.x;
+    let atmLeftBottomY = atmCoords.y + atmCoords.height/3.5; 
+    
+    let atmRightTopX = atmCoords.x + atmCoords.width;
+    // let atmRightTopY = atmCoords.y;
+    
+    let billLeftTopX = billCoords.x;
+    let billLeftTopY = billCoords.y;
+    
+    let billRightTopX = billCoords.x + billCoords.width; 
+    // let billRightopY = billCoords.y;
+
+    if (billLeftTopX > atmLeftTopX
+    && billLeftTopY > atmLeftTopY 
+    && billLeftTopY < atmLeftBottomY
+    && billRightTopX < atmRightTopX
+    ) {
+        return true;
+    }else {
+        return false
+    }
+}
+
+
+
+
+
