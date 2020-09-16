@@ -5,6 +5,7 @@
     let balance = document.querySelector('.form-control');
     let pocketCoin = document.querySelector('.pocket-coin');
         pocketCoin.value = Number(0);
+    let testNum = 10;
     
     
     
