@@ -2,7 +2,10 @@
     let progressBar = document.querySelector('.progress-bar');
     let bigCup = document.querySelector('.cup');
     let state = 'idle'; // Статус отвечает за 3 состояния готовности кофе - idle(ожидание), cooking(готовка), ready(готов)
-    
+    let balance = document.querySelector('.form-control');
+    let pocketCoin = document.querySelector('.pocket-coin');
+        pocketCoin.value = Number(0);
+    let testNum = 10;
     
     
     
@@ -36,7 +39,7 @@ function makeCofee(name, price, element) {
     if (state != 'idle') {
         return;
     }
-    let balance = document.querySelector('.form-control');
+
    
     
     if (Number(balance.value) >= price) {
@@ -82,7 +85,7 @@ progressBar.style.width = `${readyPercent}%`;
     }
 }
 
-//-------------Dhfg'n Drop-------------
+//-------------Drag'n Drop-------------
 let money = document.querySelectorAll('.money img')
 for (let bill of money) {
     bill.onmousedown = function(event) {
@@ -151,8 +154,90 @@ function inAtm(bill) {
         return false
     }
 }
+//----------- Выдача сдачи -----------
+let changeButtin = document.querySelector('.change-button');
+changeButtin.onclick = function() {
+    takeChange();
+}
+function takeChange() {
+    
 
+    
+    if(balance.value >= 10) {
+        balance.value -= 10;
+        console.log(typeof pocketCoin.value)
+        pocketCoin.value = +pocketCoin.value + 10;
+        createCoin('10');
+        return setTimeout(() => {
+            takeChange() 
+        }, 300);
+    } else if(balance.value >= 5) {
+        balance.value -= 5;
+        createCoin('5');
+        return setTimeout(() => {
+            takeChange() 
+        }, 300);
+    } else if(balance.value >= 2) {
+        balance.value -= 2;
+        createCoin('2');
+        return setTimeout(() => {
+            takeChange() 
+        }, 300);
+    } else if(balance.value >= 1) {
+        balance.value -= 1;
+        createCoin('1');
+        return setTimeout(() => {
+            takeChange() 
+        }, 300);
+    }
+}
+//----------- Создание элемента --------------
+function createCoin(nominal) {
+    let coinSrc = '';
+    switch (nominal) {
+        case "1":
+            coinSrc = 'img/1rub.png';
+            break;
+        case "2":
+            coinSrc = 'img/2rub.png';
+            break;
+        case "5":
+            coinSrc = 'img/5rub.png';
+            break;
+        case "10":
+            coinSrc = 'img/10rub.png';
+            break;
+        default:
+             return console.error('Неправильный напинал монеты')
+    }
+    let coin = document.createElement('img');
+    let sizeCoin = 50;
+    if (nominal == 1) {
+        sizeCoin = sizeCoin-(sizeCoin/100*13);
+    } else if (nominal == 5) {
+        sizeCoin = sizeCoin+(sizeCoin/100*10);
+    }else if (nominal == 2) {
+        sizeCoin = sizeCoin+(sizeCoin/100*1);
+    }
+    coin.style.width = `${sizeCoin}px`;
+    coin.style.height = `${sizeCoin}px`;
+    coin.style.position = 'absolute';
+    coin.setAttribute('src', coinSrc);
+    let changeContainer = document.querySelector('.change');
+    let changeCoords = changeContainer.getBoundingClientRect();
+    coin.style.top = Math.floor(Math.random() * (changeCoords.height - sizeCoin)) + 'px';
+    coin.style.left = Math.floor(Math.random() * (changeCoords.width - sizeCoin)) + 'px';
+    coin.style.transition = 'transform 300ms ease-in';
+    coin.style.transform = 'translateY(-30%)';
+    setTimeout(function () {
+        coin.style.transform = 'translateY(0%)';
+    }, 30)
+    // .append (Добавляет внутрь в конец родителя)
+    // .prepend (Внутрь в начало)
+    // .before (Рядом перед)
+    // .after (Рядом после)
+    // .recpaceWith (Вместо)
 
-
-
+    changeContainer.append(coin); 
+}
 

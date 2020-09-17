@@ -50,7 +50,7 @@
                      </div>
                      <div class="atm-container">
                          <img class="atm" src="img/bill_acc.png" alt="">
-                         <button type="button" class="btn btn-success btn-block">Сдача</button>
+                         <button type="button" class="btn btn-success btn-block change-button">Сдача</button>
                          <div class="change"></div>
                      </div>
                   </div>
@@ -62,9 +62,9 @@
           <img src="img/50rub.jpg" alt="50rub" data-cost='50'>
           <img src="img/100rub.jpg" alt="100rub" data-cost='100'>
           <img src="img/500rub.jpg" alt="500rub" data-cost='500'>
+          <input type="text" class='pocket-coin'>
       </div>
       <script src="js/script.js"></script>
-      <script src="../8/js/script.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
