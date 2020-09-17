@@ -54,8 +54,11 @@ function makeCofee(name, price, element) {
          let readyPercent = 0; //переменная отвечает за готовность кофе
         let coookingInterval = setInterval(function() {
             readyPercent++;
-            progressBar.style.width = `${readyPercent}%`;
+            requestAnimationFrame( function(){
+progressBar.style.width = `${readyPercent}%`;
             bigCup.style.opacity = `${readyPercent}%`;
+            })
+            
             changeDisplayText(`Ваш ${name} готовится. ${readyPercent}%`);
             
             if (readyPercent >=100){
