@@ -58,8 +58,8 @@ function makeCofee(name, price, element) {
         let coookingInterval = setInterval(function() {
             readyPercent++;
             requestAnimationFrame( function(){
-progressBar.style.width = `${readyPercent}%`;
-            bigCup.style.opacity = `${readyPercent}%`;
+                progressBar.style.width = `${readyPercent}%`;
+                bigCup.style.opacity = `${readyPercent}%`;
             })
             
             changeDisplayText(`Ваш ${name} готовится. ${readyPercent}%`);
